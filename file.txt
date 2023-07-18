@@ -1,0 +1,9 @@
+In PHP, superglobals are predefined variables that are available in all scopes throughout a script. They provide access to various information related to the server, client, and environment. One common use of superglobals is for basic routing, which allows developers to handle different HTTP requests and direct them to specific parts of the application.
+
+The key superglobals used for basic routing are `$_SERVER` and `$_GET`. `$_SERVER` contains information about the server and the current request, such as the request method (GET, POST, etc.), the requested URI, and other headers. `$_GET` contains the query parameters passed in the URL.
+
+To perform basic routing, developers can check the value of `$_SERVER['REQUEST_METHOD']` to determine the HTTP method used (e.g., GET or POST). Based on the request method and the requested URI, developers can define different routes and map them to specific PHP functions or pages.
+
+For example, if the user accesses the URL "example.com/products", the server will receive a GET request, and developers can use the value of `$_GET['q']` (if using query parameters) or `$_SERVER['REQUEST_URI']` (if using URL segments) to determine that the "products" page should be shown.
+
+Using basic routing with superglobals allows developers to create clean and user-friendly URLs and efficiently handle different HTTP requests within their PHP applications. It's a fundamental technique to implement navigation and control the flow of the application based on the user's actions and input.

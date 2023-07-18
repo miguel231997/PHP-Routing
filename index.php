@@ -10,14 +10,12 @@ echo '<prev>';
 
 $router = new App\Router();
 
-$router->register('/', function()
-{
-    echo 'Home';
-});
+$router
+    ->get('/', [App\Classes\Home::class, 'index'])
+    ->get('/invoices', [App\Classes\Invoices::class, 'index'])
+    ->get('/invoices/create', [App\Classes\Invoices::class, 'create'])
+    ->post('/invoices/create', [App\Classes\Invoices::class, 'create']);
 
-$router->register('/', function()
-{
-    echo 'Invoices';
-});
+
 
 echo $router->resolve($_SERVER['REQUEST_URI']);
